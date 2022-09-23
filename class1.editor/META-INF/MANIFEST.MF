@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: class1.editor;singleton:=true
+Automatic-Module-Name: class1.editor
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: class1.presentation.Class1EditorPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: class1.presentation
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.core.resources;visi
+ bility:=reexport,class1.edit;visibility:=reexport,org.eclipse.emf.ecore
+ .xmi;visibility:=reexport,org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,org.eclipse.emfforms.editor;bun
+ dle-version="1.8.0"
+Bundle-ActivationPolicy: lazy
+

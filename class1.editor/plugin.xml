@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?eclipse version="3.0"?><!--
+--><plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated class1 -->
+      <category id="org.eclipse.emf.ecore.Wizard.category.ID" name="%_UI_Wizard_category"/>
+      <wizard category="org.eclipse.emf.ecore.Wizard.category.ID" class="class1.presentation.Class1ModelWizard" icon="icons/full/obj16/Class1ModelFile.gif" id="class1.presentation.Class1ModelWizardID" name="%_UI_Class1ModelWizard_label">
+         <description>%_UI_Class1ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated class1 -->
+      <editor class="class1.presentation.Class1Editor" contributorClass="class1.presentation.Class1ActionBarContributor" extensions="class1" icon="icons/full/obj16/Class1ModelFile.gif" id="class1.presentation.Class1EditorID" name="%_UI_Class1Editor_label">
+      </editor>
+   </extension>
+
+<extension point="org.eclipse.ui.editors"><editor class="org.eclipse.emfforms.spi.editor.GenericEditor" default="false" extensions="class1" icon="icons/full/obj16/Class1ModelFile.gif" id="class1.editor.Class1.emfformseditor" name="EMFForms Editor"/></extension></plugin>
