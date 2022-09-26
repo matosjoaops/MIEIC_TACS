@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link class2.Student#getName <em>Name</em>}</li>
- *   <li>{@link class2.Student#getAvgScore <em>Avg Score</em>}</li>
  *   <li>{@link class2.Student#getBirthdate <em>Birthdate</em>}</li>
+ *   <li>{@link class2.Student#getAvgScore <em>Avg Score</em>}</li>
  *   <li>{@link class2.Student#getCredits <em>Credits</em>}</li>
  * </ul>
  *

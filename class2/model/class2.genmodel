@@ -8,44 +8,44 @@
   <foreignModel>class2.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Class2" disposableProviderFactory="true" ecorePackage="class2.ecore#/">
-    <genClasses ecoreClass="class2.ecore#//Faculty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Faculty/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Faculty/course"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Faculty/field"/>
+    <genClasses ecoreClass="class2.ecore#//University">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//University/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//University/faculty"/>
     </genClasses>
     <genClasses ecoreClass="class2.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Course/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Course/curricularunit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Course/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Course/curricularunit"/>
+    </genClasses>
+    <genClasses ecoreClass="class2.ecore#//CurricularUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//CurricularUnit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//CurricularUnit/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//CurricularUnit/edition"/>
+    </genClasses>
+    <genClasses ecoreClass="class2.ecore#//Student">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/birthdate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/avgScore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/credits"/>
     </genClasses>
     <genClasses ecoreClass="class2.ecore#//Professor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Professor/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Professor/birthdate"/>
     </genClasses>
-    <genClasses ecoreClass="class2.ecore#//Student">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/avgScore"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/birthdate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/credits"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference class2.ecore#//Student/grade"/>
+    <genClasses ecoreClass="class2.ecore#//Faculty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Faculty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Faculty/field"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Faculty/course"/>
     </genClasses>
     <genClasses ecoreClass="class2.ecore#//Edition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Edition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Edition/professor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Edition/student"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference class2.ecore#//Edition/grade"/>
-    </genClasses>
-    <genClasses ecoreClass="class2.ecore#//University">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//University/faculty"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//University/name"/>
-    </genClasses>
-    <genClasses ecoreClass="class2.ecore#//CurricularUnit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//CurricularUnit/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//CurricularUnit/edition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//CurricularUnit/description"/>
     </genClasses>
     <genClasses ecoreClass="class2.ecore#//Grade">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Grade/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference class2.ecore#//Grade/edition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference class2.ecore#//Grade/student"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -171,7 +171,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EReference getFaculty_Course() {
-		return (EReference) facultyEClass.getEStructuralFeatures().get(1);
+		return (EReference) facultyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -180,7 +180,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EAttribute getFaculty_Field() {
-		return (EAttribute) facultyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) facultyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -207,7 +207,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EReference getCourse_Curricularunit() {
-		return (EReference) courseEClass.getEStructuralFeatures().get(1);
+		return (EReference) courseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EAttribute getCourse_Description() {
-		return (EAttribute) courseEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) courseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -270,7 +270,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EAttribute getStudent_AvgScore() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -279,7 +279,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EAttribute getStudent_Birthdate() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -342,7 +342,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EReference getUniversity_Faculty() {
-		return (EReference) universityEClass.getEStructuralFeatures().get(0);
+		return (EReference) universityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -351,7 +351,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EAttribute getUniversity_Name() {
-		return (EAttribute) universityEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) universityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -378,7 +378,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EReference getCurricularUnit_Edition() {
-		return (EReference) curricularUnitEClass.getEStructuralFeatures().get(1);
+		return (EReference) curricularUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -387,7 +387,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * @generated
 	 */
 	public EAttribute getCurricularUnit_Description() {
-		return (EAttribute) curricularUnitEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) curricularUnitEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -455,39 +455,39 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		isCreated = true;
 
 		// Create classes and their features
-		facultyEClass = createEClass(FACULTY);
-		createEAttribute(facultyEClass, FACULTY__NAME);
-		createEReference(facultyEClass, FACULTY__COURSE);
-		createEAttribute(facultyEClass, FACULTY__FIELD);
+		universityEClass = createEClass(UNIVERSITY);
+		createEAttribute(universityEClass, UNIVERSITY__NAME);
+		createEReference(universityEClass, UNIVERSITY__FACULTY);
 
 		courseEClass = createEClass(COURSE);
 		createEAttribute(courseEClass, COURSE__NAME);
-		createEReference(courseEClass, COURSE__CURRICULARUNIT);
 		createEAttribute(courseEClass, COURSE__DESCRIPTION);
+		createEReference(courseEClass, COURSE__CURRICULARUNIT);
+
+		curricularUnitEClass = createEClass(CURRICULAR_UNIT);
+		createEAttribute(curricularUnitEClass, CURRICULAR_UNIT__NAME);
+		createEAttribute(curricularUnitEClass, CURRICULAR_UNIT__DESCRIPTION);
+		createEReference(curricularUnitEClass, CURRICULAR_UNIT__EDITION);
+
+		studentEClass = createEClass(STUDENT);
+		createEAttribute(studentEClass, STUDENT__NAME);
+		createEAttribute(studentEClass, STUDENT__BIRTHDATE);
+		createEAttribute(studentEClass, STUDENT__AVG_SCORE);
+		createEAttribute(studentEClass, STUDENT__CREDITS);
 
 		professorEClass = createEClass(PROFESSOR);
 		createEAttribute(professorEClass, PROFESSOR__NAME);
 		createEAttribute(professorEClass, PROFESSOR__BIRTHDATE);
 
-		studentEClass = createEClass(STUDENT);
-		createEAttribute(studentEClass, STUDENT__NAME);
-		createEAttribute(studentEClass, STUDENT__AVG_SCORE);
-		createEAttribute(studentEClass, STUDENT__BIRTHDATE);
-		createEAttribute(studentEClass, STUDENT__CREDITS);
+		facultyEClass = createEClass(FACULTY);
+		createEAttribute(facultyEClass, FACULTY__NAME);
+		createEAttribute(facultyEClass, FACULTY__FIELD);
+		createEReference(facultyEClass, FACULTY__COURSE);
 
 		editionEClass = createEClass(EDITION);
 		createEAttribute(editionEClass, EDITION__NAME);
 		createEReference(editionEClass, EDITION__PROFESSOR);
 		createEReference(editionEClass, EDITION__STUDENT);
-
-		universityEClass = createEClass(UNIVERSITY);
-		createEReference(universityEClass, UNIVERSITY__FACULTY);
-		createEAttribute(universityEClass, UNIVERSITY__NAME);
-
-		curricularUnitEClass = createEClass(CURRICULAR_UNIT);
-		createEAttribute(curricularUnitEClass, CURRICULAR_UNIT__NAME);
-		createEReference(curricularUnitEClass, CURRICULAR_UNIT__EDITION);
-		createEAttribute(curricularUnitEClass, CURRICULAR_UNIT__DESCRIPTION);
 
 		gradeEClass = createEClass(GRADE);
 		createEAttribute(gradeEClass, GRADE__VALUE);
@@ -519,29 +519,45 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Create type parameters
-
-		// Set bounds for type parameters
-
 		// Add supertypes to classes
 
-		// Initialize classes, features, and operations; add parameters
-		initEClass(facultyEClass, Faculty.class, "Faculty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFaculty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Faculty.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFaculty_Course(), this.getCourse(), null, "course", null, 0, -1, Faculty.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getFaculty_Field(), ecorePackage.getEString(), "field", null, 0, 1, Faculty.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize classes and features; add operations and parameters
+		initEClass(universityEClass, University.class, "University", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUniversity_Name(), ecorePackage.getEString(), "name", null, 0, 1, University.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUniversity_Faculty(), this.getFaculty(), null, "faculty", null, 0, -1, University.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Description(), ecorePackage.getEString(), "description", null, 0, 1, Course.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourse_Curricularunit(), this.getCurricularUnit(), null, "curricularunit", null, 0, -1,
 				Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCourse_Description(), ecorePackage.getEString(), "description", null, 0, 1, Course.class,
+
+		initEClass(curricularUnitEClass, CurricularUnit.class, "CurricularUnit", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCurricularUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CurricularUnit.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCurricularUnit_Description(), ecorePackage.getEString(), "description", null, 0, 1,
+				CurricularUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getCurricularUnit_Edition(), this.getEdition(), null, "edition", null, 0, -1,
+				CurricularUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStudent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Student.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_Birthdate(), ecorePackage.getEDate(), "birthdate", null, 0, 1, Student.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_AvgScore(), ecorePackage.getEFloat(), "avgScore", null, 0, 1, Student.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_Credits(), ecorePackage.getEFloat(), "credits", null, 0, 1, Student.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(professorEClass, Professor.class, "Professor", !IS_ABSTRACT, !IS_INTERFACE,
@@ -551,15 +567,14 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		initEAttribute(getProfessor_Birthdate(), ecorePackage.getEDate(), "birthdate", null, 0, 1, Professor.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStudent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Student.class, !IS_TRANSIENT,
+		initEClass(facultyEClass, Faculty.class, "Faculty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFaculty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Faculty.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStudent_AvgScore(), ecorePackage.getEFloat(), "avgScore", null, 0, 1, Student.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStudent_Birthdate(), ecorePackage.getEDate(), "birthdate", null, 0, 1, Student.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStudent_Credits(), ecorePackage.getEFloat(), "credits", null, 0, 1, Student.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFaculty_Field(), ecorePackage.getEString(), "field", null, 0, 1, Faculty.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFaculty_Course(), this.getCourse(), null, "course", null, 0, -1, Faculty.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(editionEClass, Edition.class, "Edition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEdition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Edition.class, !IS_TRANSIENT,
@@ -570,25 +585,6 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		initEReference(getEdition_Student(), this.getStudent(), null, "student", null, 0, -1, Edition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(universityEClass, University.class, "University", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUniversity_Faculty(), this.getFaculty(), null, "faculty", null, 0, -1, University.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUniversity_Name(), ecorePackage.getEString(), "name", null, 0, 1, University.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(curricularUnitEClass, CurricularUnit.class, "CurricularUnit", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCurricularUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CurricularUnit.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCurricularUnit_Edition(), this.getEdition(), null, "edition", null, 0, -1,
-				CurricularUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCurricularUnit_Description(), ecorePackage.getEString(), "description", null, 0, 1,
-				CurricularUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(gradeEClass, Grade.class, "Grade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGrade_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Grade.class, !IS_TRANSIENT,

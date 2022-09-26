@@ -64,52 +64,7 @@ public interface Class2Package extends EPackage {
 	 * @see class2.impl.Class2PackageImpl#getFaculty()
 	 * @generated
 	 */
-	int FACULTY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACULTY__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Course</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACULTY__COURSE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Field</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACULTY__FIELD = 2;
-
-	/**
-	 * The number of structural features of the '<em>Faculty</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACULTY_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Faculty</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FACULTY_OPERATION_COUNT = 0;
+	int FACULTY = 5;
 
 	/**
 	 * The meta object id for the '{@link class2.impl.CourseImpl <em>Course</em>}' class.
@@ -122,6 +77,73 @@ public interface Class2Package extends EPackage {
 	int COURSE = 1;
 
 	/**
+	 * The meta object id for the '{@link class2.impl.ProfessorImpl <em>Professor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see class2.impl.ProfessorImpl
+	 * @see class2.impl.Class2PackageImpl#getProfessor()
+	 * @generated
+	 */
+	int PROFESSOR = 4;
+
+	/**
+	 * The meta object id for the '{@link class2.impl.StudentImpl <em>Student</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see class2.impl.StudentImpl
+	 * @see class2.impl.Class2PackageImpl#getStudent()
+	 * @generated
+	 */
+	int STUDENT = 3;
+
+	/**
+	 * The meta object id for the '{@link class2.impl.EditionImpl <em>Edition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see class2.impl.EditionImpl
+	 * @see class2.impl.Class2PackageImpl#getEdition()
+	 * @generated
+	 */
+	int EDITION = 6;
+
+	/**
+	 * The meta object id for the '{@link class2.impl.UniversityImpl <em>University</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see class2.impl.UniversityImpl
+	 * @see class2.impl.Class2PackageImpl#getUniversity()
+	 * @generated
+	 */
+	int UNIVERSITY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Faculty</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY__FACULTY = 1;
+
+	/**
+	 * The number of structural features of the '<em>University</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY_FEATURE_COUNT = 2;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,22 +153,22 @@ public interface Class2Package extends EPackage {
 	int COURSE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Curricularunit</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__CURRICULARUNIT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__DESCRIPTION = 2;
+	int COURSE__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Curricularunit</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__CURRICULARUNIT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Course</em>' class.
@@ -158,23 +180,95 @@ public interface Class2Package extends EPackage {
 	int COURSE_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Course</em>' class.
+	 * The meta object id for the '{@link class2.impl.CurricularUnitImpl <em>Curricular Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see class2.impl.CurricularUnitImpl
+	 * @see class2.impl.Class2PackageImpl#getCurricularUnit()
+	 * @generated
+	 */
+	int CURRICULAR_UNIT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_OPERATION_COUNT = 0;
+	int CURRICULAR_UNIT__NAME = 0;
 
 	/**
-	 * The meta object id for the '{@link class2.impl.ProfessorImpl <em>Professor</em>}' class.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see class2.impl.ProfessorImpl
-	 * @see class2.impl.Class2PackageImpl#getProfessor()
 	 * @generated
+	 * @ordered
 	 */
-	int PROFESSOR = 2;
+	int CURRICULAR_UNIT__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Edition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRICULAR_UNIT__EDITION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Curricular Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRICULAR_UNIT_FEATURE_COUNT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Birthdate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__BIRTHDATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Avg Score</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__AVG_SCORE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Credits</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__CREDITS = 3;
+
+	/**
+	 * The number of structural features of the '<em>Student</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,87 +298,40 @@ public interface Class2Package extends EPackage {
 	int PROFESSOR_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Professor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROFESSOR_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link class2.impl.StudentImpl <em>Student</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see class2.impl.StudentImpl
-	 * @see class2.impl.Class2PackageImpl#getStudent()
-	 * @generated
-	 */
-	int STUDENT = 3;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__NAME = 0;
+	int FACULTY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Avg Score</b></em>' attribute.
+	 * The feature id for the '<em><b>Field</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__AVG_SCORE = 1;
+	int FACULTY__FIELD = 1;
 
 	/**
-	 * The feature id for the '<em><b>Birthdate</b></em>' attribute.
+	 * The feature id for the '<em><b>Course</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__BIRTHDATE = 2;
+	int FACULTY__COURSE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Credits</b></em>' attribute.
+	 * The number of structural features of the '<em>Faculty</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__CREDITS = 3;
-
-	/**
-	 * The number of structural features of the '<em>Student</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDENT_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Student</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link class2.impl.EditionImpl <em>Edition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see class2.impl.EditionImpl
-	 * @see class2.impl.Class2PackageImpl#getEdition()
-	 * @generated
-	 */
-	int EDITION = 4;
+	int FACULTY_FEATURE_COUNT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -321,116 +368,6 @@ public interface Class2Package extends EPackage {
 	 * @ordered
 	 */
 	int EDITION_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Edition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDITION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link class2.impl.UniversityImpl <em>University</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see class2.impl.UniversityImpl
-	 * @see class2.impl.Class2PackageImpl#getUniversity()
-	 * @generated
-	 */
-	int UNIVERSITY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Faculty</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIVERSITY__FACULTY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIVERSITY__NAME = 1;
-
-	/**
-	 * The number of structural features of the '<em>University</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIVERSITY_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>University</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIVERSITY_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link class2.impl.CurricularUnitImpl <em>Curricular Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see class2.impl.CurricularUnitImpl
-	 * @see class2.impl.Class2PackageImpl#getCurricularUnit()
-	 * @generated
-	 */
-	int CURRICULAR_UNIT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRICULAR_UNIT__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Edition</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRICULAR_UNIT__EDITION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRICULAR_UNIT__DESCRIPTION = 2;
-
-	/**
-	 * The number of structural features of the '<em>Curricular Unit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRICULAR_UNIT_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Curricular Unit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRICULAR_UNIT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link class2.impl.GradeImpl <em>Grade</em>}' class.
@@ -477,15 +414,6 @@ public interface Class2Package extends EPackage {
 	 * @ordered
 	 */
 	int GRADE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Grade</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRADE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link class2.Faculty <em>Faculty</em>}'.
