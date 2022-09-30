@@ -32,7 +32,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass facultyEClass = null;
+	private EClass universityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass professorEClass = null;
+	private EClass curricularUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,21 +60,21 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass professorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass facultyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass editionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass universityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass curricularUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,8 +152,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFaculty() {
-		return facultyEClass;
+	public EClass getUniversity() {
+		return universityEClass;
 	}
 
 	/**
@@ -161,8 +161,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFaculty_Name() {
-		return (EAttribute) facultyEClass.getEStructuralFeatures().get(0);
+	public EAttribute getUniversity_Name() {
+		return (EAttribute) universityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -170,17 +170,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFaculty_Course() {
-		return (EReference) facultyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFaculty_Field() {
-		return (EAttribute) facultyEClass.getEStructuralFeatures().get(1);
+	public EReference getUniversity_Faculty() {
+		return (EReference) universityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -206,6 +197,15 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCourse_Description() {
+		return (EAttribute) courseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCourse_Curricularunit() {
 		return (EReference) courseEClass.getEStructuralFeatures().get(2);
 	}
@@ -215,8 +215,89 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCourse_Description() {
-		return (EAttribute) courseEClass.getEStructuralFeatures().get(1);
+	public EClass getCurricularUnit() {
+		return curricularUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCurricularUnit_Name() {
+		return (EAttribute) curricularUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCurricularUnit_Description() {
+		return (EAttribute) curricularUnitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCurricularUnit_Edition() {
+		return (EReference) curricularUnitEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStudent() {
+		return studentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStudent_Name() {
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStudent_Birthdate() {
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStudent_AvgScore() {
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStudent_Credits() {
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStudent_Grade() {
+		return (EReference) studentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -251,8 +332,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStudent() {
-		return studentEClass;
+	public EClass getFaculty() {
+		return facultyEClass;
 	}
 
 	/**
@@ -260,8 +341,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStudent_Name() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getFaculty_Name() {
+		return (EAttribute) facultyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -269,8 +350,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStudent_AvgScore() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(2);
+	public EAttribute getFaculty_Field() {
+		return (EAttribute) facultyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -278,17 +359,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStudent_Birthdate() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStudent_Credits() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(3);
+	public EReference getFaculty_Course() {
+		return (EReference) facultyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -332,62 +404,8 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUniversity() {
-		return universityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUniversity_Faculty() {
-		return (EReference) universityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUniversity_Name() {
-		return (EAttribute) universityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCurricularUnit() {
-		return curricularUnitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCurricularUnit_Name() {
-		return (EAttribute) curricularUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCurricularUnit_Edition() {
-		return (EReference) curricularUnitEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCurricularUnit_Description() {
-		return (EAttribute) curricularUnitEClass.getEStructuralFeatures().get(1);
+	public EReference getEdition_Grade() {
+		return (EReference) editionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -406,24 +424,6 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 	 */
 	public EAttribute getGrade_Value() {
 		return (EAttribute) gradeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getGrade_Edition() {
-		return (EReference) gradeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getGrade_Student() {
-		return (EReference) gradeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -474,6 +474,7 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		createEAttribute(studentEClass, STUDENT__BIRTHDATE);
 		createEAttribute(studentEClass, STUDENT__AVG_SCORE);
 		createEAttribute(studentEClass, STUDENT__CREDITS);
+		createEReference(studentEClass, STUDENT__GRADE);
 
 		professorEClass = createEClass(PROFESSOR);
 		createEAttribute(professorEClass, PROFESSOR__NAME);
@@ -488,11 +489,10 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		createEAttribute(editionEClass, EDITION__NAME);
 		createEReference(editionEClass, EDITION__PROFESSOR);
 		createEReference(editionEClass, EDITION__STUDENT);
+		createEReference(editionEClass, EDITION__GRADE);
 
 		gradeEClass = createEClass(GRADE);
 		createEAttribute(gradeEClass, GRADE__VALUE);
-		createEReference(gradeEClass, GRADE__EDITION);
-		createEReference(gradeEClass, GRADE__STUDENT);
 	}
 
 	/**
@@ -559,6 +559,9 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_Credits(), ecorePackage.getEFloat(), "credits", null, 0, 1, Student.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStudent_Grade(), this.getGrade(), null, "grade", null, 0, -1, Student.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(professorEClass, Professor.class, "Professor", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -585,16 +588,13 @@ public class Class2PackageImpl extends EPackageImpl implements Class2Package {
 		initEReference(getEdition_Student(), this.getStudent(), null, "student", null, 0, -1, Edition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdition_Grade(), this.getGrade(), null, "grade", null, 0, -1, Edition.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(gradeEClass, Grade.class, "Grade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGrade_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Grade.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGrade_Edition(), this.getEdition(), null, "edition", null, 0, 1, Grade.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getGrade_Student(), this.getStudent(), null, "student", null, 0, 1, Grade.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

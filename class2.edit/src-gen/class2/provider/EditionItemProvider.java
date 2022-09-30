@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
@@ -51,8 +50,7 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -84,12 +82,12 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Class2Package.Literals.EDITION__PROFESSOR);
 			childrenFeatures.add(Class2Package.Literals.EDITION__STUDENT);
+			childrenFeatures.add(Class2Package.Literals.EDITION__GRADE);
 		}
 		return childrenFeatures;
 	}
@@ -99,7 +97,6 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
@@ -113,19 +110,8 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Edition"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -134,7 +120,6 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getText(Object object) {
 		String label = ((Edition) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Edition_type")
@@ -148,7 +133,6 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
@@ -158,6 +142,7 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 			return;
 		case Class2Package.EDITION__PROFESSOR:
 		case Class2Package.EDITION__STUDENT:
+		case Class2Package.EDITION__GRADE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -171,8 +156,7 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(Class2Package.Literals.EDITION__PROFESSOR,
@@ -180,6 +164,9 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 
 		newChildDescriptors.add(
 				createChildParameter(Class2Package.Literals.EDITION__STUDENT, Class2Factory.eINSTANCE.createStudent()));
+
+		newChildDescriptors.add(
+				createChildParameter(Class2Package.Literals.EDITION__GRADE, Class2Factory.eINSTANCE.createGrade()));
 	}
 
 	/**
@@ -188,7 +175,6 @@ public class EditionItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ResourceLocator getResourceLocator() {
 		return Class2EditPlugin.INSTANCE;
 	}

@@ -53,78 +53,27 @@ public class Class2FactoryImpl extends EFactoryImpl implements Class2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case Class2Package.FACULTY:
-			return createFaculty();
-		case Class2Package.COURSE:
-			return createCourse();
-		case Class2Package.PROFESSOR:
-			return createProfessor();
-		case Class2Package.STUDENT:
-			return createStudent();
-		case Class2Package.EDITION:
-			return createEdition();
 		case Class2Package.UNIVERSITY:
 			return createUniversity();
+		case Class2Package.COURSE:
+			return createCourse();
 		case Class2Package.CURRICULAR_UNIT:
 			return createCurricularUnit();
+		case Class2Package.STUDENT:
+			return createStudent();
+		case Class2Package.PROFESSOR:
+			return createProfessor();
+		case Class2Package.FACULTY:
+			return createFaculty();
+		case Class2Package.EDITION:
+			return createEdition();
 		case Class2Package.GRADE:
 			return createGrade();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Faculty createFaculty() {
-		FacultyImpl faculty = new FacultyImpl();
-		return faculty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Course createCourse() {
-		CourseImpl course = new CourseImpl();
-		return course;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Professor createProfessor() {
-		ProfessorImpl professor = new ProfessorImpl();
-		return professor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Student createStudent() {
-		StudentImpl student = new StudentImpl();
-		return student;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Edition createEdition() {
-		EditionImpl edition = new EditionImpl();
-		return edition;
 	}
 
 	/**
@@ -142,9 +91,59 @@ public class Class2FactoryImpl extends EFactoryImpl implements Class2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Course createCourse() {
+		CourseImpl course = new CourseImpl();
+		return course;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CurricularUnit createCurricularUnit() {
 		CurricularUnitImpl curricularUnit = new CurricularUnitImpl();
 		return curricularUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Student createStudent() {
+		StudentImpl student = new StudentImpl();
+		return student;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Professor createProfessor() {
+		ProfessorImpl professor = new ProfessorImpl();
+		return professor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Faculty createFaculty() {
+		FacultyImpl faculty = new FacultyImpl();
+		return faculty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Edition createEdition() {
+		EditionImpl edition = new EditionImpl();
+		return edition;
 	}
 
 	/**
@@ -172,7 +171,6 @@ public class Class2FactoryImpl extends EFactoryImpl implements Class2Factory {
 	 * @deprecated
 	 * @generated
 	 */
-	@Deprecated
 	public static Class2Package getPackage() {
 		return Class2Package.eINSTANCE;
 	}

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link class2.Edition#getName <em>Name</em>}</li>
  *   <li>{@link class2.Edition#getProfessor <em>Professor</em>}</li>
  *   <li>{@link class2.Edition#getStudent <em>Student</em>}</li>
+ *   <li>{@link class2.Edition#getGrade <em>Grade</em>}</li>
  * </ul>
  *
  * @see class2.Class2Package#getEdition()
@@ -54,10 +55,10 @@ public interface Edition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Professor</em>' containment reference list.
 	 * @see class2.Class2Package#getEdition_Professor()
-	 * @model containment="true"
+	 * @model type="class2.Professor" containment="true"
 	 * @generated
 	 */
-	EList<Professor> getProfessor();
+	EList getProfessor();
 
 	/**
 	 * Returns the value of the '<em><b>Student</b></em>' containment reference list.
@@ -66,9 +67,21 @@ public interface Edition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Student</em>' containment reference list.
 	 * @see class2.Class2Package#getEdition_Student()
-	 * @model containment="true"
+	 * @model type="class2.Student" containment="true"
 	 * @generated
 	 */
-	EList<Student> getStudent();
+	EList getStudent();
+
+	/**
+	 * Returns the value of the '<em><b>Grade</b></em>' containment reference list.
+	 * The list contents are of type {@link class2.Grade}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Grade</em>' containment reference list.
+	 * @see class2.Class2Package#getEdition_Grade()
+	 * @model type="class2.Grade" containment="true"
+	 * @generated
+	 */
+	EList getGrade();
 
 } // Edition

@@ -27,6 +27,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/birthdate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/avgScore"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Student/credits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Student/grade"/>
     </genClasses>
     <genClasses ecoreClass="class2.ecore#//Professor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Professor/name"/>
@@ -41,11 +42,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Edition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Edition/professor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Edition/student"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference class2.ecore#//Edition/grade"/>
     </genClasses>
     <genClasses ecoreClass="class2.ecore#//Grade">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute class2.ecore#//Grade/value"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference class2.ecore#//Grade/edition"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference class2.ecore#//Grade/student"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

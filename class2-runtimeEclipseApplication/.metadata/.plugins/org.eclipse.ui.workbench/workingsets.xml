@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664225089886_0" label="Java Main Sources" name="Java Main Sources"/>
-<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664225089889_1" label="Java Test Sources" name="Java Test Sources"/>
-<workingSet editPageId="org.eclipse.emf.cdo.explorer.ui.OthersWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664225090059_2" label="Other CDO Checkouts" name="Other CDO Checkouts"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664225090223_3" label="Window Working Set" name="Aggregate for window 1664225090223"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664547319496_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664547319500_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.emf.cdo.explorer.ui.OthersWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664547319675_2" label="Other CDO Checkouts" name="Other CDO Checkouts"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664547319842_3" label="Window Working Set" name="Aggregate for window 1664547319842"/>
 </workingSetManager>

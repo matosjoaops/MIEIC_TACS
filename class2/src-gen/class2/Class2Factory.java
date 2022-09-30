@@ -22,13 +22,13 @@ public interface Class2Factory extends EFactory {
 	Class2Factory eINSTANCE = class2.impl.Class2FactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Faculty</em>'.
+	 * Returns a new object of class '<em>University</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Faculty</em>'.
+	 * @return a new object of class '<em>University</em>'.
 	 * @generated
 	 */
-	Faculty createFaculty();
+	University createUniversity();
 
 	/**
 	 * Returns a new object of class '<em>Course</em>'.
@@ -40,13 +40,13 @@ public interface Class2Factory extends EFactory {
 	Course createCourse();
 
 	/**
-	 * Returns a new object of class '<em>Professor</em>'.
+	 * Returns a new object of class '<em>Curricular Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Professor</em>'.
+	 * @return a new object of class '<em>Curricular Unit</em>'.
 	 * @generated
 	 */
-	Professor createProfessor();
+	CurricularUnit createCurricularUnit();
 
 	/**
 	 * Returns a new object of class '<em>Student</em>'.
@@ -58,6 +58,24 @@ public interface Class2Factory extends EFactory {
 	Student createStudent();
 
 	/**
+	 * Returns a new object of class '<em>Professor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Professor</em>'.
+	 * @generated
+	 */
+	Professor createProfessor();
+
+	/**
+	 * Returns a new object of class '<em>Faculty</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Faculty</em>'.
+	 * @generated
+	 */
+	Faculty createFaculty();
+
+	/**
 	 * Returns a new object of class '<em>Edition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,24 +83,6 @@ public interface Class2Factory extends EFactory {
 	 * @generated
 	 */
 	Edition createEdition();
-
-	/**
-	 * Returns a new object of class '<em>University</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>University</em>'.
-	 * @generated
-	 */
-	University createUniversity();
-
-	/**
-	 * Returns a new object of class '<em>Curricular Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Curricular Unit</em>'.
-	 * @generated
-	 */
-	CurricularUnit createCurricularUnit();
 
 	/**
 	 * Returns a new object of class '<em>Grade</em>'.

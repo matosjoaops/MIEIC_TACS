@@ -30,23 +30,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link class2.impl.UniversityImpl#getFaculty <em>Faculty</em>}</li>
  *   <li>{@link class2.impl.UniversityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link class2.impl.UniversityImpl#getFaculty <em>Faculty</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UniversityImpl extends MinimalEObjectImpl.Container implements University {
-	/**
-	 * The cached value of the '{@link #getFaculty() <em>Faculty</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFaculty()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Faculty> faculty;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +58,16 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getFaculty() <em>Faculty</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFaculty()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList faculty;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -81,21 +81,8 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return Class2Package.Literals.UNIVERSITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Faculty> getFaculty() {
-		if (faculty == null) {
-			faculty = new EObjectContainmentEList<Faculty>(Faculty.class, this, Class2Package.UNIVERSITY__FACULTY);
-		}
-		return faculty;
 	}
 
 	/**
@@ -124,11 +111,22 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EList getFaculty() {
+		if (faculty == null) {
+			faculty = new EObjectContainmentEList(Faculty.class, this, Class2Package.UNIVERSITY__FACULTY);
+		}
+		return faculty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Class2Package.UNIVERSITY__FACULTY:
-			return ((InternalEList<?>) getFaculty()).basicRemove(otherEnd, msgs);
+			return ((InternalEList) getFaculty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -138,13 +136,12 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Class2Package.UNIVERSITY__FACULTY:
-			return getFaculty();
 		case Class2Package.UNIVERSITY__NAME:
 			return getName();
+		case Class2Package.UNIVERSITY__FACULTY:
+			return getFaculty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,16 +151,14 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Class2Package.UNIVERSITY__FACULTY:
-			getFaculty().clear();
-			getFaculty().addAll((Collection<? extends Faculty>) newValue);
-			return;
 		case Class2Package.UNIVERSITY__NAME:
 			setName((String) newValue);
+			return;
+		case Class2Package.UNIVERSITY__FACULTY:
+			getFaculty().clear();
+			getFaculty().addAll((Collection) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,14 +169,13 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Class2Package.UNIVERSITY__FACULTY:
-			getFaculty().clear();
-			return;
 		case Class2Package.UNIVERSITY__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case Class2Package.UNIVERSITY__FACULTY:
+			getFaculty().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -192,13 +186,12 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Class2Package.UNIVERSITY__FACULTY:
-			return faculty != null && !faculty.isEmpty();
 		case Class2Package.UNIVERSITY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case Class2Package.UNIVERSITY__FACULTY:
+			return faculty != null && !faculty.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,12 +201,11 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

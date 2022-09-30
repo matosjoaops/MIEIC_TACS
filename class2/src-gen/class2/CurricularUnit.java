@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link class2.CurricularUnit#getName <em>Name</em>}</li>
- *   <li>{@link class2.CurricularUnit#getEdition <em>Edition</em>}</li>
  *   <li>{@link class2.CurricularUnit#getDescription <em>Description</em>}</li>
+ *   <li>{@link class2.CurricularUnit#getEdition <em>Edition</em>}</li>
  * </ul>
  *
  * @see class2.Class2Package#getCurricularUnit()
@@ -48,18 +48,6 @@ public interface CurricularUnit extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Edition</b></em>' containment reference list.
-	 * The list contents are of type {@link class2.Edition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Edition</em>' containment reference list.
-	 * @see class2.Class2Package#getCurricularUnit_Edition()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Edition> getEdition();
-
-	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,5 +68,17 @@ public interface CurricularUnit extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Edition</b></em>' containment reference list.
+	 * The list contents are of type {@link class2.Edition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Edition</em>' containment reference list.
+	 * @see class2.Class2Package#getCurricularUnit_Edition()
+	 * @model type="class2.Edition" containment="true"
+	 * @generated
+	 */
+	EList getEdition();
 
 } // CurricularUnit

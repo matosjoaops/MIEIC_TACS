@@ -56,7 +56,7 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+	protected Collection supportedTypes = new ArrayList();
 
 	/**
 	 * This constructs an instance.
@@ -73,26 +73,25 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link class2.Faculty} instances.
+	 * This keeps track of the one adapter used for all {@link class2.University} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FacultyItemProvider facultyItemProvider;
+	protected UniversityItemProvider universityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link class2.Faculty}.
+	 * This creates an adapter for a {@link class2.University}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Adapter createFacultyAdapter() {
-		if (facultyItemProvider == null) {
-			facultyItemProvider = new FacultyItemProvider(this);
+	public Adapter createUniversityAdapter() {
+		if (universityItemProvider == null) {
+			universityItemProvider = new UniversityItemProvider(this);
 		}
 
-		return facultyItemProvider;
+		return universityItemProvider;
 	}
 
 	/**
@@ -109,105 +108,12 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Adapter createCourseAdapter() {
 		if (courseItemProvider == null) {
 			courseItemProvider = new CourseItemProvider(this);
 		}
 
 		return courseItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link class2.Professor} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ProfessorItemProvider professorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link class2.Professor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createProfessorAdapter() {
-		if (professorItemProvider == null) {
-			professorItemProvider = new ProfessorItemProvider(this);
-		}
-
-		return professorItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link class2.Student} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StudentItemProvider studentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link class2.Student}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStudentAdapter() {
-		if (studentItemProvider == null) {
-			studentItemProvider = new StudentItemProvider(this);
-		}
-
-		return studentItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link class2.Edition} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EditionItemProvider editionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link class2.Edition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEditionAdapter() {
-		if (editionItemProvider == null) {
-			editionItemProvider = new EditionItemProvider(this);
-		}
-
-		return editionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link class2.University} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UniversityItemProvider universityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link class2.University}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUniversityAdapter() {
-		if (universityItemProvider == null) {
-			universityItemProvider = new UniversityItemProvider(this);
-		}
-
-		return universityItemProvider;
 	}
 
 	/**
@@ -224,13 +130,100 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Adapter createCurricularUnitAdapter() {
 		if (curricularUnitItemProvider == null) {
 			curricularUnitItemProvider = new CurricularUnitItemProvider(this);
 		}
 
 		return curricularUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link class2.Student} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StudentItemProvider studentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link class2.Student}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createStudentAdapter() {
+		if (studentItemProvider == null) {
+			studentItemProvider = new StudentItemProvider(this);
+		}
+
+		return studentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link class2.Professor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProfessorItemProvider professorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link class2.Professor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createProfessorAdapter() {
+		if (professorItemProvider == null) {
+			professorItemProvider = new ProfessorItemProvider(this);
+		}
+
+		return professorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link class2.Faculty} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FacultyItemProvider facultyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link class2.Faculty}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createFacultyAdapter() {
+		if (facultyItemProvider == null) {
+			facultyItemProvider = new FacultyItemProvider(this);
+		}
+
+		return facultyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link class2.Edition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EditionItemProvider editionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link class2.Edition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createEditionAdapter() {
+		if (editionItemProvider == null) {
+			editionItemProvider = new EditionItemProvider(this);
+		}
+
+		return editionItemProvider;
 	}
 
 	/**
@@ -247,7 +240,6 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Adapter createGradeAdapter() {
 		if (gradeItemProvider == null) {
 			gradeItemProvider = new GradeItemProvider(this);
@@ -281,7 +273,6 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
@@ -292,7 +283,6 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
@@ -302,11 +292,10 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class) || (((Class) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -355,20 +344,20 @@ public class Class2ItemProviderAdapterFactory extends Class2AdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (facultyItemProvider != null)
-			facultyItemProvider.dispose();
-		if (courseItemProvider != null)
-			courseItemProvider.dispose();
-		if (professorItemProvider != null)
-			professorItemProvider.dispose();
-		if (studentItemProvider != null)
-			studentItemProvider.dispose();
-		if (editionItemProvider != null)
-			editionItemProvider.dispose();
 		if (universityItemProvider != null)
 			universityItemProvider.dispose();
+		if (courseItemProvider != null)
+			courseItemProvider.dispose();
 		if (curricularUnitItemProvider != null)
 			curricularUnitItemProvider.dispose();
+		if (studentItemProvider != null)
+			studentItemProvider.dispose();
+		if (professorItemProvider != null)
+			professorItemProvider.dispose();
+		if (facultyItemProvider != null)
+			facultyItemProvider.dispose();
+		if (editionItemProvider != null)
+			editionItemProvider.dispose();
 		if (gradeItemProvider != null)
 			gradeItemProvider.dispose();
 	}

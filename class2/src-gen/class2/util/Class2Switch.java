@@ -4,10 +4,10 @@ package class2.util;
 
 import class2.*;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
+import java.util.List;
 
-import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see class2.Class2Package
  * @generated
  */
-public class Class2Switch<T> extends Switch<T> {
+public class Class2Switch {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -44,16 +44,14 @@ public class Class2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Checks whether this is a switch for the given package.
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param ePackage the package in question.
-	 * @return whether this is a switch for the given package.
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
-	protected boolean isSwitchFor(EPackage ePackage) {
-		return ePackage == modelPackage;
+	public Object doSwitch(EObject theEObject) {
+		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
 	/**
@@ -63,61 +61,76 @@ public class Class2Switch<T> extends Switch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected Object doSwitch(EClass theEClass, EObject theEObject) {
+		if (theEClass.eContainer() == modelPackage) {
+			return doSwitch(theEClass.getClassifierID(), theEObject);
+		} else {
+			List eSuperTypes = theEClass.getESuperTypes();
+			return eSuperTypes.isEmpty() ? defaultCase(theEObject) : doSwitch((EClass) eSuperTypes.get(0), theEObject);
+		}
+	}
+
+	/**
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @generated
+	 */
+	protected Object doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case Class2Package.FACULTY: {
-			Faculty faculty = (Faculty) theEObject;
-			T result = caseFaculty(faculty);
+		case Class2Package.UNIVERSITY: {
+			University university = (University) theEObject;
+			Object result = caseUniversity(university);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case Class2Package.COURSE: {
 			Course course = (Course) theEObject;
-			T result = caseCourse(course);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Class2Package.PROFESSOR: {
-			Professor professor = (Professor) theEObject;
-			T result = caseProfessor(professor);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Class2Package.STUDENT: {
-			Student student = (Student) theEObject;
-			T result = caseStudent(student);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Class2Package.EDITION: {
-			Edition edition = (Edition) theEObject;
-			T result = caseEdition(edition);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Class2Package.UNIVERSITY: {
-			University university = (University) theEObject;
-			T result = caseUniversity(university);
+			Object result = caseCourse(course);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case Class2Package.CURRICULAR_UNIT: {
 			CurricularUnit curricularUnit = (CurricularUnit) theEObject;
-			T result = caseCurricularUnit(curricularUnit);
+			Object result = caseCurricularUnit(curricularUnit);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Class2Package.STUDENT: {
+			Student student = (Student) theEObject;
+			Object result = caseStudent(student);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Class2Package.PROFESSOR: {
+			Professor professor = (Professor) theEObject;
+			Object result = caseProfessor(professor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Class2Package.FACULTY: {
+			Faculty faculty = (Faculty) theEObject;
+			Object result = caseFaculty(faculty);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Class2Package.EDITION: {
+			Edition edition = (Edition) theEObject;
+			Object result = caseEdition(edition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case Class2Package.GRADE: {
 			Grade grade = (Grade) theEObject;
-			T result = caseGrade(grade);
+			Object result = caseGrade(grade);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -128,17 +141,17 @@ public class Class2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Faculty</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>University</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Faculty</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>University</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFaculty(Faculty object) {
+	public Object caseUniversity(University object) {
 		return null;
 	}
 
@@ -153,67 +166,7 @@ public class Class2Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCourse(Course object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Professor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Professor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProfessor(Professor object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Student</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Student</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStudent(Student object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Edition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Edition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEdition(Edition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>University</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>University</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUniversity(University object) {
+	public Object caseCourse(Course object) {
 		return null;
 	}
 
@@ -228,7 +181,67 @@ public class Class2Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCurricularUnit(CurricularUnit object) {
+	public Object caseCurricularUnit(CurricularUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Student</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Student</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseStudent(Student object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Professor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Professor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseProfessor(Professor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Faculty</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Faculty</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseFaculty(Faculty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Edition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Edition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseEdition(Edition object) {
 		return null;
 	}
 
@@ -243,7 +256,7 @@ public class Class2Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGrade(Grade object) {
+	public Object caseGrade(Grade object) {
 		return null;
 	}
 
@@ -258,8 +271,7 @@ public class Class2Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	@Override
-	public T defaultCase(EObject object) {
+	public Object defaultCase(EObject object) {
 		return null;
 	}
 

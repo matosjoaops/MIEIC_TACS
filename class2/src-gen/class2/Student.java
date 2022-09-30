@@ -4,6 +4,8 @@ package class2;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link class2.Student#getBirthdate <em>Birthdate</em>}</li>
  *   <li>{@link class2.Student#getAvgScore <em>Avg Score</em>}</li>
  *   <li>{@link class2.Student#getCredits <em>Credits</em>}</li>
+ *   <li>{@link class2.Student#getGrade <em>Grade</em>}</li>
  * </ul>
  *
  * @see class2.Class2Package#getStudent()
@@ -49,28 +52,6 @@ public interface Student extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Avg Score</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Avg Score</em>' attribute.
-	 * @see #setAvgScore(float)
-	 * @see class2.Class2Package#getStudent_AvgScore()
-	 * @model
-	 * @generated
-	 */
-	float getAvgScore();
-
-	/**
-	 * Sets the value of the '{@link class2.Student#getAvgScore <em>Avg Score</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Avg Score</em>' attribute.
-	 * @see #getAvgScore()
-	 * @generated
-	 */
-	void setAvgScore(float value);
-
-	/**
 	 * Returns the value of the '<em><b>Birthdate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,6 +74,28 @@ public interface Student extends EObject {
 	void setBirthdate(Date value);
 
 	/**
+	 * Returns the value of the '<em><b>Avg Score</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Avg Score</em>' attribute.
+	 * @see #setAvgScore(float)
+	 * @see class2.Class2Package#getStudent_AvgScore()
+	 * @model
+	 * @generated
+	 */
+	float getAvgScore();
+
+	/**
+	 * Sets the value of the '{@link class2.Student#getAvgScore <em>Avg Score</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Avg Score</em>' attribute.
+	 * @see #getAvgScore()
+	 * @generated
+	 */
+	void setAvgScore(float value);
+
+	/**
 	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,5 +116,17 @@ public interface Student extends EObject {
 	 * @generated
 	 */
 	void setCredits(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Grade</b></em>' containment reference list.
+	 * The list contents are of type {@link class2.Grade}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Grade</em>' containment reference list.
+	 * @see class2.Class2Package#getStudent_Grade()
+	 * @model type="class2.Grade" containment="true"
+	 * @generated
+	 */
+	EList getGrade();
 
 } // Student

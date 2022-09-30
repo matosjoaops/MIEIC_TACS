@@ -48,7 +48,6 @@ public final class Class2EditorPlugin extends EMFPlugin {
 	 * @return the singleton instance.
 	 * @generated
 	 */
-	@Override
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}

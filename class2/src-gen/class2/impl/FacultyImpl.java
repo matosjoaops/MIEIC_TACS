@@ -31,8 +31,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link class2.impl.FacultyImpl#getName <em>Name</em>}</li>
- *   <li>{@link class2.impl.FacultyImpl#getCourse <em>Course</em>}</li>
  *   <li>{@link class2.impl.FacultyImpl#getField <em>Field</em>}</li>
+ *   <li>{@link class2.impl.FacultyImpl#getCourse <em>Course</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,16 +59,6 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCourse() <em>Course</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourse()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Course> course;
-
-	/**
 	 * The default value of the '{@link #getField() <em>Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +79,16 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	protected String field = FIELD_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCourse() <em>Course</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourse()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList course;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -102,7 +102,6 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return Class2Package.Literals.FACULTY;
 	}
@@ -133,18 +132,6 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Course> getCourse() {
-		if (course == null) {
-			course = new EObjectContainmentEList<Course>(Course.class, this, Class2Package.FACULTY__COURSE);
-		}
-		return course;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getField() {
 		return field;
 	}
@@ -166,11 +153,22 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EList getCourse() {
+		if (course == null) {
+			course = new EObjectContainmentEList(Course.class, this, Class2Package.FACULTY__COURSE);
+		}
+		return course;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Class2Package.FACULTY__COURSE:
-			return ((InternalEList<?>) getCourse()).basicRemove(otherEnd, msgs);
+			return ((InternalEList) getCourse()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -180,15 +178,14 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Class2Package.FACULTY__NAME:
 			return getName();
-		case Class2Package.FACULTY__COURSE:
-			return getCourse();
 		case Class2Package.FACULTY__FIELD:
 			return getField();
+		case Class2Package.FACULTY__COURSE:
+			return getCourse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -198,19 +195,17 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case Class2Package.FACULTY__NAME:
 			setName((String) newValue);
 			return;
-		case Class2Package.FACULTY__COURSE:
-			getCourse().clear();
-			getCourse().addAll((Collection<? extends Course>) newValue);
-			return;
 		case Class2Package.FACULTY__FIELD:
 			setField((String) newValue);
+			return;
+		case Class2Package.FACULTY__COURSE:
+			getCourse().clear();
+			getCourse().addAll((Collection) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -221,17 +216,16 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case Class2Package.FACULTY__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Class2Package.FACULTY__COURSE:
-			getCourse().clear();
-			return;
 		case Class2Package.FACULTY__FIELD:
 			setField(FIELD_EDEFAULT);
+			return;
+		case Class2Package.FACULTY__COURSE:
+			getCourse().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -242,15 +236,14 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case Class2Package.FACULTY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Class2Package.FACULTY__COURSE:
-			return course != null && !course.isEmpty();
 		case Class2Package.FACULTY__FIELD:
 			return FIELD_EDEFAULT == null ? field != null : !FIELD_EDEFAULT.equals(field);
+		case Class2Package.FACULTY__COURSE:
+			return course != null && !course.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,12 +253,11 @@ public class FacultyImpl extends MinimalEObjectImpl.Container implements Faculty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", field: ");

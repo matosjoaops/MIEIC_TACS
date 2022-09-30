@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
@@ -48,14 +47,11 @@ public class GradeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addValuePropertyDescriptor(object);
-			addEditionPropertyDescriptor(object);
-			addStudentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,52 +72,13 @@ public class GradeItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
-	 * This adds a property descriptor for the Edition feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEditionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Grade_edition_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Grade_edition_feature", "_UI_Grade_type"),
-						Class2Package.Literals.GRADE__EDITION, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Student feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStudentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Grade_student_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Grade_student_feature", "_UI_Grade_type"),
-						Class2Package.Literals.GRADE__STUDENT, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This returns Grade.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Grade"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -130,7 +87,6 @@ public class GradeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getText(Object object) {
 		Grade grade = (Grade) object;
 		return getString("_UI_Grade_type") + " " + grade.getValue();
@@ -143,7 +99,6 @@ public class GradeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
@@ -162,8 +117,7 @@ public class GradeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -173,7 +127,6 @@ public class GradeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ResourceLocator getResourceLocator() {
 		return Class2EditPlugin.INSTANCE;
 	}

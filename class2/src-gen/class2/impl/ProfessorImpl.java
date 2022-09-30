@@ -83,7 +83,6 @@ public class ProfessorImpl extends MinimalEObjectImpl.Container implements Profe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return Class2Package.Literals.PROFESSOR;
 	}
@@ -136,7 +135,6 @@ public class ProfessorImpl extends MinimalEObjectImpl.Container implements Profe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Class2Package.PROFESSOR__NAME:
@@ -152,7 +150,6 @@ public class ProfessorImpl extends MinimalEObjectImpl.Container implements Profe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case Class2Package.PROFESSOR__NAME:
@@ -170,7 +167,6 @@ public class ProfessorImpl extends MinimalEObjectImpl.Container implements Profe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case Class2Package.PROFESSOR__NAME:
@@ -188,7 +184,6 @@ public class ProfessorImpl extends MinimalEObjectImpl.Container implements Profe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case Class2Package.PROFESSOR__NAME:
@@ -204,12 +199,11 @@ public class ProfessorImpl extends MinimalEObjectImpl.Container implements Profe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", birthdate: ");

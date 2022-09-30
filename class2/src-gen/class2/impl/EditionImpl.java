@@ -4,6 +4,7 @@ package class2.impl;
 
 import class2.Class2Package;
 import class2.Edition;
+import class2.Grade;
 import class2.Professor;
 import class2.Student;
 
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link class2.impl.EditionImpl#getName <em>Name</em>}</li>
  *   <li>{@link class2.impl.EditionImpl#getProfessor <em>Professor</em>}</li>
  *   <li>{@link class2.impl.EditionImpl#getStudent <em>Student</em>}</li>
+ *   <li>{@link class2.impl.EditionImpl#getGrade <em>Grade</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,7 +69,7 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Professor> professor;
+	protected EList professor;
 
 	/**
 	 * The cached value of the '{@link #getStudent() <em>Student</em>}' containment reference list.
@@ -77,7 +79,17 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Student> student;
+	protected EList student;
+
+	/**
+	 * The cached value of the '{@link #getGrade() <em>Grade</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGrade()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList grade;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,7 +105,6 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected EClass eStaticClass() {
 		return Class2Package.Literals.EDITION;
 	}
@@ -124,9 +135,9 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Professor> getProfessor() {
+	public EList getProfessor() {
 		if (professor == null) {
-			professor = new EObjectContainmentEList<Professor>(Professor.class, this, Class2Package.EDITION__PROFESSOR);
+			professor = new EObjectContainmentEList(Professor.class, this, Class2Package.EDITION__PROFESSOR);
 		}
 		return professor;
 	}
@@ -136,9 +147,9 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Student> getStudent() {
+	public EList getStudent() {
 		if (student == null) {
-			student = new EObjectContainmentEList<Student>(Student.class, this, Class2Package.EDITION__STUDENT);
+			student = new EObjectContainmentEList(Student.class, this, Class2Package.EDITION__STUDENT);
 		}
 		return student;
 	}
@@ -148,13 +159,26 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EList getGrade() {
+		if (grade == null) {
+			grade = new EObjectContainmentEList(Grade.class, this, Class2Package.EDITION__GRADE);
+		}
+		return grade;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Class2Package.EDITION__PROFESSOR:
-			return ((InternalEList<?>) getProfessor()).basicRemove(otherEnd, msgs);
+			return ((InternalEList) getProfessor()).basicRemove(otherEnd, msgs);
 		case Class2Package.EDITION__STUDENT:
-			return ((InternalEList<?>) getStudent()).basicRemove(otherEnd, msgs);
+			return ((InternalEList) getStudent()).basicRemove(otherEnd, msgs);
+		case Class2Package.EDITION__GRADE:
+			return ((InternalEList) getGrade()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,7 +188,6 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Class2Package.EDITION__NAME:
@@ -173,6 +196,8 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 			return getProfessor();
 		case Class2Package.EDITION__STUDENT:
 			return getStudent();
+		case Class2Package.EDITION__GRADE:
+			return getGrade();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,8 +207,6 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case Class2Package.EDITION__NAME:
@@ -191,11 +214,15 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 			return;
 		case Class2Package.EDITION__PROFESSOR:
 			getProfessor().clear();
-			getProfessor().addAll((Collection<? extends Professor>) newValue);
+			getProfessor().addAll((Collection) newValue);
 			return;
 		case Class2Package.EDITION__STUDENT:
 			getStudent().clear();
-			getStudent().addAll((Collection<? extends Student>) newValue);
+			getStudent().addAll((Collection) newValue);
+			return;
+		case Class2Package.EDITION__GRADE:
+			getGrade().clear();
+			getGrade().addAll((Collection) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -206,7 +233,6 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case Class2Package.EDITION__NAME:
@@ -218,6 +244,9 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 		case Class2Package.EDITION__STUDENT:
 			getStudent().clear();
 			return;
+		case Class2Package.EDITION__GRADE:
+			getGrade().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,7 +256,6 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case Class2Package.EDITION__NAME:
@@ -236,6 +264,8 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 			return professor != null && !professor.isEmpty();
 		case Class2Package.EDITION__STUDENT:
 			return student != null && !student.isEmpty();
+		case Class2Package.EDITION__GRADE:
+			return grade != null && !grade.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -245,12 +275,11 @@ public class EditionImpl extends MinimalEObjectImpl.Container implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

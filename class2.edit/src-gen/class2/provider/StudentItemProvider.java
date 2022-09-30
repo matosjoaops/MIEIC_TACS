@@ -2,6 +2,7 @@
  */
 package class2.provider;
 
+import class2.Class2Factory;
 import class2.Class2Package;
 import class2.Student;
 
@@ -13,10 +14,11 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
@@ -48,14 +50,13 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addAvgScorePropertyDescriptor(object);
 			addBirthdatePropertyDescriptor(object);
+			addAvgScorePropertyDescriptor(object);
 			addCreditsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -77,22 +78,6 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This adds a property descriptor for the Avg Score feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAvgScorePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Student_avgScore_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Student_avgScore_feature",
-								"_UI_Student_type"),
-						Class2Package.Literals.STUDENT__AVG_SCORE, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Birthdate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +91,22 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 								"_UI_Student_type"),
 						Class2Package.Literals.STUDENT__BIRTHDATE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Avg Score feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAvgScorePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Student_avgScore_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Student_avgScore_feature",
+								"_UI_Student_type"),
+						Class2Package.Literals.STUDENT__AVG_SCORE, true, false, false,
+						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -125,14 +126,19 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This returns Student.gif.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Student"));
+	public Collection getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(Class2Package.Literals.STUDENT__GRADE);
+		}
+		return childrenFeatures;
 	}
 
 	/**
@@ -140,9 +146,21 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns Student.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Student"));
 	}
 
 	/**
@@ -151,7 +169,6 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getText(Object object) {
 		String label = ((Student) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Student_type")
@@ -165,16 +182,18 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Student.class)) {
 		case Class2Package.STUDENT__NAME:
-		case Class2Package.STUDENT__AVG_SCORE:
 		case Class2Package.STUDENT__BIRTHDATE:
+		case Class2Package.STUDENT__AVG_SCORE:
 		case Class2Package.STUDENT__CREDITS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case Class2Package.STUDENT__GRADE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -187,9 +206,11 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(
+				createChildParameter(Class2Package.Literals.STUDENT__GRADE, Class2Factory.eINSTANCE.createGrade()));
 	}
 
 	/**
@@ -198,7 +219,6 @@ public class StudentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ResourceLocator getResourceLocator() {
 		return Class2EditPlugin.INSTANCE;
 	}

@@ -1,4 +1,4 @@
-!SESSION 2022-09-26 21:44:46.898 -----------------------------------------------
+!SESSION 2022-09-30 15:15:16.500 -----------------------------------------------
 eclipse.buildId=4.24.0.I20220607-0700
 java.version=17.0.4.1
 java.vendor=Eclipse Adoptium
@@ -6,5 +6,5 @@ BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_PT
 Framework arguments:  -product org.eclipse.platform.ide
 Command-line arguments:  -product org.eclipse.platform.ide -data /home/mechjm/Faculdade/Repositories/TACS/../runtime-EclipseApplication -dev file:/home/mechjm/Faculdade/Repositories/TACS/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
 
-!ENTRY org.eclipse.oomph.setup.ui 1 0 2022-09-26 21:44:58.625
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2022-09-30 15:15:27.347
 !MESSAGE Setup tasks were performed during startup updating 243 preferences. See '/home/mechjm/Faculdade/Repositories/TACS/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/org.eclipse.oomph.setup/setup.log' for details
